@@ -87,4 +87,18 @@ public class Spaceship : MonoBehaviour
             _transform.position = new Vector2(_transform.position.x, _maxPositionY);
         }
     }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.TryGetComponent(out Asteroid asteroid) == true)
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.TryGetComponent(out Missile missile) == true)
+        {
+            // OnMissileEntered?.Invoke();
+            // Destroy(gameObject);
+        }
+    }
 }
