@@ -1,3 +1,4 @@
+using EventBusSystem;
 using UnityEngine;
 
 public class Spaceship : MonoBehaviour
@@ -92,13 +93,8 @@ public class Spaceship : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out Asteroid asteroid) == true)
         {
+            EventBus.RaiseEvent<IEventHandler>(handler => handler.HandleDestroySpaceship());
             Destroy(gameObject);
-        }
-
-        if (other.gameObject.TryGetComponent(out Missile missile) == true)
-        {
-            // OnMissileEntered?.Invoke();
-            // Destroy(gameObject);
         }
     }
 }
