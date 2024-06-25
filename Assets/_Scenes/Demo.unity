@@ -1465,15 +1465,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 881903776192541116, guid: 41fe3010966e96046b0b36bc962f7936, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1669104470697165508, guid: 41fe3010966e96046b0b36bc962f7936, type: 3}
       propertyPath: m_Name
       value: Spaceship
       objectReference: {fileID: 0}
-    - target: {fileID: 5445128773706968465, guid: 41fe3010966e96046b0b36bc962f7936, type: 3}
+    - target: {fileID: 2377789225435912417, guid: 41fe3010966e96046b0b36bc962f7936, type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 519420031}
