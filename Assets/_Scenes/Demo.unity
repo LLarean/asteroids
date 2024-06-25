@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 243195883}
   - component: {fileID: 243195882}
   m_Layer: 0
-  m_Name: Space02
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 291947777}
   - component: {fileID: 291947778}
   m_Layer: 0
-  m_Name: Background
+  m_Name: BackgroundScroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,9 +522,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33ddb7a2a9fffe408589061c2145984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bg1: {fileID: 1913537476}
-  _bg2: {fileID: 243195882}
-  _speed: 0.005
+  _scrollingSpeed: 0.005
+  _backgrounds:
+  - {fileID: 1913537476}
+  - {fileID: 243195882}
 --- !u!1 &438688715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1196,7 @@ GameObject:
   - component: {fileID: 1913537477}
   - component: {fileID: 1913537476}
   m_Layer: 0
-  m_Name: Space01
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
