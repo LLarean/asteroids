@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Asteroid : MonoBehaviour
@@ -8,8 +7,11 @@ public class Asteroid : MonoBehaviour
     [SerializeField]
     private float _speed = 1;
     
-    public event Action OnDestroyed;
-
+    public void StartMoving()
+    {
+        _rigidbody2D.velocity = new Vector2(0,-_speed);
+    }
+    
     private void Start()
     {
         _rigidbody2D.velocity = new Vector2(0,-_speed);
@@ -17,7 +19,7 @@ public class Asteroid : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        OnDestroyed?.Invoke();
-        Destroy(gameObject);
+        _rigidbody2D.velocity = Vector2.zero;
+        gameObject.SetActive(false);
     }
 }
