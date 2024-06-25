@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _asteroid: {fileID: 7385380501230522809, guid: 0a4e46f8524f81841883d8abf9e393a1, type: 3}
-  _spawnInterval: 4
+  _spawInterval: {x: 1, y: 2}
 --- !u!4 &1600406643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2456669168802911443, guid: 47660cbf30be70243b94e351d6f4f6e4, type: 3}

@@ -3,13 +3,13 @@
 public class SpaceshipMover : MonoBehaviour
 {
     [SerializeField]
-    private Camera _camera;
-    [SerializeField]
     private Rigidbody2D _rigidbody2D;
     [SerializeField]
     private float _speed = 4;
 
+    private Camera _camera;
     private Transform _transform;
+
     private float _minPositionX;
     private float _maxPositionX;
     private float _minPositionY;
@@ -17,6 +17,7 @@ public class SpaceshipMover : MonoBehaviour
 
     private void Start()
     {
+        _camera = Camera.main;
         _transform = transform;
         
         _minPositionX = _camera.ScreenToWorldPoint(new Vector2(0, 0)).x;
