@@ -4,8 +4,7 @@ public class SpaceshipMover : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D _rigidbody2D;
-    [SerializeField]
-    private float _speed = 4;
+    private float _speed = Config.SpaceshipMoveSpeed;
 
     private Camera _camera;
     private Transform _transform;

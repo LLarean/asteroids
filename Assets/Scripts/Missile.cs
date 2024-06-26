@@ -6,7 +6,7 @@ public class Missile : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out Spaceship spaceship) == false)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
