@@ -27,6 +27,12 @@ public class ChoosingBonus : MonoBehaviour
     {
         EventBus.RaiseEvent<IGameHandler>(handler => handler.HandleBonusAdd());
         Time.timeScale = 1;
+
+        if (Config.LaserGunLevel < 5)
+        {
+            Config.LaserGunLevel += 2;
+        }
+        
         gameObject.SetActive(false);
     }
 }

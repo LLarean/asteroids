@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Blaster : MonoBehaviour
+public class LaserGun : MonoBehaviour
 {
     [SerializeField]
     private Laser _laser;
     [SerializeField]
-    private Transform _laserSpawnPosition;
+    private List<Transform> _laserSpawnPosition;
 
     private bool _canShoot;
     private List<Laser> _lasers = new();
@@ -30,11 +30,14 @@ public class Blaster : MonoBehaviour
     
     private void LaunchLaser()
     {
-        var laser = GetLaser();
+        for (int i = 0; i < Config.LaserGunLevel; i++)
+        {
+            var laser = GetLaser();
         
-        laser.transform.position = _laserSpawnPosition.transform.position;
-        laser.gameObject.SetActive(true);
-        laser.StartMoving();
+            laser.transform.position = _laserSpawnPosition[i].transform.position;
+            laser.gameObject.SetActive(true);
+            laser.StartMoving();
+        }
     }
     
     private Laser GetLaser()

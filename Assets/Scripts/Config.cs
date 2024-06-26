@@ -5,7 +5,9 @@ public static class Config
     
     public const float LaserMissileSpeed = 6f;
     public const float LaserAttackSpeed = 1f;
-    public const int LaserGunLevel = 1;
+    public static int LaserGunLevel = 1;
+    
+    public const float TorpedoMissileSpeed = 4f;
     
     public const float BonusSpawnTime = 10f;
     public const int ExpForBonus = 5;
