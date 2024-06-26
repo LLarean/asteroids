@@ -8,4 +8,5 @@ public static class Config
     public const int LaserGunLevel = 1;
     
     public const float BonusSpawnTime = 10f;
+    public const int ExpForBonus = 5;
 }

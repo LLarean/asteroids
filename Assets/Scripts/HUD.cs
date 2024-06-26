@@ -38,5 +38,15 @@ public class HUD : MonoBehaviour, IGameHandler
     {
         _experienceValue++;
         _experience.text = _experienceValue.ToString();
+
+        if (_experienceValue / Config.ExpForBonus == 1)
+        {
+            _experienceValue = 0;
+            EventBus.RaiseEvent<IEventHandler>(handler => handler.HandleSelectBonusSpaceship());
+        }
+    }
+
+    public void HandleBonusAdd()
+    {
     }
 }
