@@ -1,3 +1,4 @@
+using Asteroids.Scripts.Global;
 using UnityEngine;
 
 namespace Asteroids.Scripts.Project
@@ -20,24 +21,26 @@ namespace Asteroids.Scripts.Project
         [SerializeField]
         private AudioClip _click;
 
+        [ContextMenu("PlayMenuMusic")]
         public void PlayMenuMusic()
         {
-            _sound.clip = _menuMusic;
-            _sound.Play();
+            _music.clip = _menuMusic;
+            _music.Play();
         }
 
         public void PlayGameMusic()
         {
-            _sound.clip = _gameMusic;
-            _sound.Play();
+            _music.clip = _gameMusic;
+            _music.Play();
         }
 
-        public void PlayClick()
-        {
-            _sound.PlayOneShot(_click);
-        }
+        public void PlayClick() => _sound.PlayOneShot(_click);
 
-        private void Start ()
+        public void SetMusicVolume(float value) => _music.volume = value;
+
+        public void SetSoundVolume(float value) => _sound.volume = value;
+
+        private void Awake()
         {
             if (Instance == null)
             {
@@ -49,8 +52,26 @@ namespace Asteroids.Scripts.Project
             }
 
             DontDestroyOnLoad(gameObject);
-
+            
             _sound.loop = true;
+
+            if (PlayerPrefs.HasKey(GlobalStrings.Music) == true)
+            {
+                SetMusicVolume(PlayerPrefs.GetFloat(GlobalStrings.Music));
+            }
+            else
+            {
+                _music.volume = GlobalSettings.DefaultMusicVolume;
+            }
+            
+            if (PlayerPrefs.HasKey(GlobalStrings.Sound) == true)
+            {
+                SetSoundVolume(PlayerPrefs.GetFloat(GlobalStrings.Sound));
+            }
+            else
+            {
+                _sound.volume = GlobalSettings.DefaultSoundVolume;
+            }
         }
     }
 }
