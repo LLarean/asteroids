@@ -25,6 +25,7 @@ namespace Asteroids.Scripts.Menu
 
         private void LoadGame()
         {
+            AudioPlayer.Instance.PlayClick();
             SceneManager.LoadScene(GlobalStrings.Game);
         }
 

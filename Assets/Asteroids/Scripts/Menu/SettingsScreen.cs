@@ -27,6 +27,7 @@ namespace Asteroids.Scripts.Menu
 
         private void ShowMainMenu()
         {
+            AudioPlayer.Instance.PlayClick();
             _mainScreen.ShowScreen();
             gameObject.SetActive(false);
         }
