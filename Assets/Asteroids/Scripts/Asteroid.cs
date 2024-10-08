@@ -1,3 +1,4 @@
+using Asteroids.Scripts.Project;
 using EventBusSystem;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ public class Asteroid : MonoBehaviour
     {
         EventBus.RaiseEvent<IGameHandler>(handler => handler.HandleExperienceChange());
         _rigidbody2D.velocity = Vector2.zero;
+        
+        AudioPlayer.Instance.PlayExplosion();
         gameObject.SetActive(false);
     }
 }

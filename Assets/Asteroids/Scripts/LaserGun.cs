@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Asteroids.Scripts.Project;
 using UnityEngine;
 
 public class LaserGun : MonoBehaviour
@@ -38,6 +39,8 @@ public class LaserGun : MonoBehaviour
             laser.gameObject.SetActive(true);
             laser.StartMoving();
         }
+        
+        AudioPlayer.Instance.PlayLaser();
     }
     
     private Laser GetLaser()

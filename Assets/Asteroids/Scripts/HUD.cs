@@ -14,8 +14,8 @@ public class HUD : MonoBehaviour, IGameHandler
 
     private void Start()
     {
-        _health.text = _healthValue.ToString();
-        _experience.text = _experienceValue.ToString();
+        _health.text = $"HP: {_healthValue}";
+        _experience.text = $"EXP: {_experienceValue}";
     }
 
     private void OnEnable()
@@ -31,13 +31,13 @@ public class HUD : MonoBehaviour, IGameHandler
     public void HandleHealthChange()
     {
         _healthValue--;
-        _health.text = _healthValue.ToString();
+        _health.text = $"HP: {_healthValue}";
     }
 
     public void HandleExperienceChange()
     {
         _experienceValue++;
-        _experience.text = _experienceValue.ToString();
+        _experience.text = $"EXP: {_experienceValue}";
 
         if (_experienceValue / Config.ExpForBonus == 1)
         {

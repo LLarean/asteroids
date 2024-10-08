@@ -20,6 +20,10 @@ namespace Asteroids.Scripts.Project
         [Header("Sounds")]
         [SerializeField]
         private AudioClip _click;
+        [SerializeField]
+        private AudioClip _laser;
+        [SerializeField]
+        private AudioClip _explosion;
 
         [ContextMenu("PlayMenuMusic")]
         public void PlayMenuMusic()
@@ -35,6 +39,10 @@ namespace Asteroids.Scripts.Project
         }
 
         public void PlayClick() => _sound.PlayOneShot(_click);
+        
+        public void PlayLaser() => _sound.PlayOneShot(_laser);
+        
+        public void PlayExplosion() => _sound.PlayOneShot(_explosion);
 
         public void SetMusicVolume(float value) => _music.volume = value;
 
